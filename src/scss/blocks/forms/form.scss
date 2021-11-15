@@ -1,0 +1,73 @@
+.form {
+  margin-top: 40px;
+
+  @include font($fs: 14px, $lh: 160%);
+
+  &__control {
+    margin-top: 40px;
+
+    @include font($fw: 600);
+
+    input, textarea {
+      width: 100%;
+      padding: 15px 20px;
+      margin-top: 8px;
+
+      @include font($fw: initial, $lh: 160%, $ff: $f-secondary);
+    }
+
+    &--extended {
+      height: 105px;
+    }
+
+    &--extended-more {
+      height: 165px;
+
+      @include media-sm {
+        height: 150px;
+      }
+    }
+  }
+
+  &__prompt {
+    margin-top: 10px;
+    color: $c-text-06;
+  }
+
+  &__btn {
+    height: 52px;
+    width: 240px;
+    background-color: $c-text;
+    color: $c-white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    margin: 0 auto;
+
+    @include font($fw: 500, $lh: 140%, $fs: 14px);
+
+    @include media-lg {
+      width: 150px;
+      margin: 0;
+    }
+  }
+
+  input[type=checkbox] {
+    margin: 40px 0;
+  }
+
+  a {
+    color: $c-text;
+
+    @include hover {
+      text-decoration: none;
+    }
+  }
+
+  input[type=checkbox] {
+    @include absolute();
+    z-index: -1;
+    opacity: 0;
+
+  }
+}

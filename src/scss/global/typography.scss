@@ -1,0 +1,28 @@
+h1 {
+  text-align: center;
+  width: 100%;
+  margin: 15px 0;
+
+  @include font($fw: 500, $lh: 110%, $fy: normal, $fs: 44px, $ff: $f-main, $ls: -0.02em);
+
+  @include media-lg {
+    text-align: start;
+
+    @include font($fw: 500, $lh: 100%, $fs: 74px)
+  }
+}
+
+h3 {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 15px;
+
+  text-align: center;
+
+  @include font($fw: 500, $fs: 32px, $ff: $f-main, $ls: -0.02em, $lh: 120%, $fy: normal);
+
+  @include media-lg {
+
+    @include font($fw: 500, $lh: 110%, $fs: 44px)
+  }
+}

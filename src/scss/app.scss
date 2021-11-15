@@ -1,0 +1,16 @@
+@import "global/variables";
+@import "global/mixins";
+@import "global/common";
+@import "global/fonts";
+@import "global/container";
+@import "global/typography";
+
+@import "blocks/header/header";
+@import "blocks/header/menu-top";
+@import "blocks/block";
+@import "blocks/button";
+@import "blocks/list";
+@import "blocks/footer";
+@import "blocks/main";
+@import "blocks/forms/form";
+@import "blocks/forms/custom-checkbox";

@@ -1,0 +1,167 @@
+@mixin font($ff: null, $fs: null, $lh: null, $fw: null, $fy: null, $c: null, $ls: null) {
+  font-family: $ff;
+  font-size: $fs;
+  line-height: $lh;
+  font-weight: $fw;
+  font-style: $fy;
+  color: $c;
+  letter-spacing: $ls;
+}
+
+@mixin position($position, $t: null, $l: null, $r: null, $b: null, $z: null) {
+  position: $position;
+  top: $t;
+  left: $l;
+  right: $r;
+  bottom: $b;
+  z-index: $z;
+}
+
+@mixin absolute($args...) {
+  @include position(absolute, $args...);
+}
+
+@mixin relative($args...) {
+  @include position(relative, $args...);
+}
+
+@mixin fixed($args...) {
+  @include position(fixed, $args...);
+}
+
+@mixin sticky($args...) {
+  position: -webkit-sticky; // for old safari
+  @include position(sticky, $args...);
+}
+
+@mixin flex($fd: null, $fw: null, $ai: center, $jc: flex-start, $fs: null, $fg: null) {
+  display: flex;
+  flex-direction: $fd;
+  flex-wrap: $fw;
+  align-items: $ai;
+  justify-content: $jc;
+  flex-shrink: $fs;
+  flex-grow: $fg;
+}
+
+@mixin media-xs {
+  @media (min-width: #{$v-xs}) {
+    @content;
+  }
+}
+
+@mixin media-sm {
+  @media (min-width: #{$v-sm}) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media (min-width: #{$v-md}) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media (min-width: #{$v-lg}) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @media (min-width: #{$v-xl}) {
+    @content;
+  }
+}
+
+@mixin media-xxl {
+  @media (min-width: #{$v-xxl}) {
+    @content;
+  }
+}
+
+@mixin media($size) {
+  @media (min-width: $size+'px') {
+    @content;
+  }
+}
+
+@mixin svg-fill($c) {
+  svg {
+    fill: $c;
+    transition: fill $t-std;
+  }
+}
+
+@mixin svg-stroke($c) {
+  svg {
+    stroke: $c;
+    transition: stroke $t-std;
+  }
+}
+
+@mixin visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+@mixin invisible {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $t-std;
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+
+  // IE 10-11 doesn't support @media hover
+  @include ie-support {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin hoverDevice {
+  @media (hover: hover) {
+    @content;
+  }
+
+  // IE 10-11 doesn't support @media hover
+  @include ie-support {
+    @content;
+  }
+}
+
+// This hack detects IE 10-11 and provide styles used only in IE.
+@mixin ie-support {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content;
+  }
+}
+@mixin outline {
+  &:focus {
+    outline: none;
+    box-shadow: $o-std;
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: $o-std;
+  }
+}
+
+@mixin object-fit($value) {
+  @supports (object-fit: $value) {
+    object-fit: $value;
+  }
+}
+
+@mixin list-reset {
+  padding-left: 0;
+  list-style: none;
+}

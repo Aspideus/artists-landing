@@ -1,0 +1,195 @@
+.block {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  overflow: hidden;
+  position: relative;
+
+  @include media-lg {
+    padding-top: 120px;
+    padding-bottom: 160px;
+  }
+
+  &__row {
+
+    @include media-lg {
+      display: flex;
+
+      .block {
+        flex: 0 0 50%;
+      }
+    }
+  }
+
+  &__wrapper {
+
+    @include media-lg {
+      max-width: 705px;
+
+      @include flex($fw: wrap, $jc: flex-end);
+    }
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__img {
+    text-align: center;
+    margin-bottom: 15px;
+
+    @include media-lg {
+      display: none;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include media-lg {
+        display: initial;
+      }
+
+      img {
+        margin-top: -10px;
+      }
+    }
+  }
+
+  &__content {
+
+    p {
+      color: $c-white;
+      text-align: center;
+
+      @include font($fs: 18px, $lh: 160%, $fy: normal, $fw: normal);
+    }
+
+    @include media-lg {
+      flex: 0 0 50%;
+
+      @include flex($fw: wrap);
+    }
+  }
+
+  &__text,
+  &__text p {
+    margin-top: 30px;
+    max-width: 100%;
+
+    @include font($fs: 14px, $lh: 1.64, $fw: 300, $c: $c-text-secondary);
+
+    @include media-sm {
+      margin-top: 200px;
+    }
+    @include media-lg {
+      margin-top: 0;
+    }
+  }
+
+  &--dark {
+    background-color: $c-text;
+    color: $c-white;
+  }
+
+  &--yellow {
+    color: $c-text;
+    background-color: $c-brand;
+  }
+
+  p {
+    text-align: center;
+    color: $c-text;
+    margin: 0;
+
+    @include font($fs: 14px, $lh: 160%);
+  }
+
+  &__warning {
+    display: flex;
+
+    @include font($fs: 14px, $fw: initial);
+
+    @include media-sm {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    @include media-lg {
+      width: 100%;
+    }
+
+    img {
+      align-self: flex-start;
+      margin-top: -1px;
+      margin-right: 6px;
+    }
+  }
+
+  &__subtitle,
+  &__abovetitle {
+    text-align: center;
+
+    @include font($fs: 14px, $lh: 160%);
+
+    &--gray {
+      color: $c-text-secondary;
+    }
+
+    &--center {
+      text-align: center;
+    }
+
+    @include media-lg {
+      text-align: start;
+      width: 100%;
+    }
+
+    &--mb {
+
+      @include media-lg {
+        margin-bottom: 40px;
+        max-width: 450px;
+
+        @include font($fs: 14px);
+      }
+    }
+
+    &--undertitle {
+      @include media-lg {
+        margin-top: 40px;
+      }
+    }
+
+    &--center {
+      @include media-lg {
+        text-align: center;
+      }
+    }
+  }
+
+  &__abovetitle {
+    @include media-lg {
+
+      @include font($fs: 18px);
+    }
+  }
+
+  &__col {
+
+    @include media-lg {
+      padding-right: 170px;
+      flex: 0 0 50%;
+
+      h3, p {
+        text-align: start;
+      }
+
+      h3 {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__titlebox {
+    margin-bottom: 60px;
+  }
+}

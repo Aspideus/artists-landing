@@ -1,0 +1,98 @@
+.footer {
+  background-color: $c-text;
+  color: $c-white;
+  padding: 20px;
+  padding-top: 30px;
+
+  @include font($fs: 14px, $lh: 160%);
+
+  &__menu {
+    max-width: 98%;
+    margin: 0 auto;
+
+    @include flex($fw: wrap, $ai: flex-start);
+
+    @include media-lg {
+      max-width: 85vw;
+    }
+  }
+
+  &__block {
+    @include flex($fw: wrap);
+    @include font($fs: 18px, $lh: 140%, $fw: 600);
+    flex: 0 0 50%;
+    margin-bottom: 26px;
+    height: fit-content;
+
+    &:first-child {
+      margin-bottom: 11px;
+    }
+
+    @include media-lg {
+      flex: 17%;
+    }
+
+    a {
+      @include font($fs: 14px, $fw: initial);
+      text-decoration: none;
+      color: $c-text-secondary;
+      margin: 4px 0;
+      flex: 0 0 100%;
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+    color: $c-text-secondary;
+    margin: 30px 0;
+    flex: 0 0 100%;
+
+    @include media-lg {
+      flex: 0 0 50%;
+      text-align: start;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include media-lg {
+        display: initial;
+        width: 100%;
+        text-align: end;
+      }
+
+      a {
+        color: $c-white;
+      }
+    }
+  }
+
+  &__blocks {
+    flex: 0 0 100%;
+
+    @include flex($fw: wrap, $ai: flex-start);
+
+    @include media-lg {
+      flex: 0 0 68%;
+    }
+
+    &--full {
+      flex: 0 0 100%;
+    }
+  }
+
+  &__logo {
+    display: none;
+
+    @include media-lg {
+      display: flex;
+      flex: 0 0 32%;
+    }
+
+    img {
+      width: 100px;
+      align-self: flex-start;
+      margin-top: -2px;
+    }
+  }
+}

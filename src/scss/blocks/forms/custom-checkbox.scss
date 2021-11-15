@@ -1,0 +1,43 @@
+.custom-checkbox {
+  & + label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    font-size: 14px;
+    width: 105%; /*400px */
+    margin: 40px 0px;
+
+    @include font($fs: 14px);
+
+    :last-child {
+      margin-left: 3px;
+      margin-right: 3px;
+    }
+
+    @include hover {
+      cursor: pointer;
+    }
+  }
+
+  & + label::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid $c-text;
+    border-radius: 3px;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+
+  &:checked + label::before {
+    border-color: $c-text;
+    background-color: $c-text;
+    background-image: url("../img/checkbox.svg");
+    mix-blend-mode: normal;
+  }
+}

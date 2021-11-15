@@ -1,0 +1,110 @@
+.main {
+  padding-top: 160px;
+  padding-bottom: 420px;
+
+  @include media-xs {
+    padding-bottom: 160px;
+  }
+
+  @include media-sm {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @include media-lg {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  &__btns {
+    margin-top: 40px;
+    position: relative;
+    z-index: 99;
+
+    @include flex($fw: wrap, $ai: center, $fd: column);
+
+    @include media-lg {
+      flex-direction: row;
+    }
+  }
+
+  &__btn {
+    width: 240px;
+
+    @include media-lg {
+      width: auto;
+    }
+
+    & + & {
+      margin-top: 24px;
+
+      @include media-lg {
+        margin-top: 0;
+        margin-left: 32px;
+      }
+    }
+  }
+
+  &__image {
+
+    &--desktop {
+      display: none;
+      z-index: 2;
+
+      @include media-lg {
+        display: initial;
+        height: 100%;
+        object-fit: cover;
+
+        @include absolute($b: 0, $l: 50%);
+      }
+
+      @media (min-width: 1830px)
+      {
+        left: auto;
+        width: 50%;
+        right: 0;
+      }
+    }
+
+    &--mobile {
+      @include absolute($b: 0, $r: 0);
+      width: 100%;
+      margin-left: -20px;
+      transform: translate(0px, calc(100vw - 320px));
+
+      @include media-xs {
+        display: none;
+      }
+    }
+  }
+
+  &__wrapper {
+
+    @include media-lg {
+      display: flex;
+      justify-content: flex-start;
+      text-align: start;
+    }
+  }
+
+  &__content {
+
+    @include media-sm {
+      @include flex($fw: wrap, $jc: center);
+    }
+
+    @include media-lg {
+      max-width: 590px;
+      height: fit-content;
+      align-self: center;
+      padding-bottom: 160px;
+      padding-top: 230px;
+      justify-content: flex-start;
+    }
+  }
+}
+
+.text-shadow {
+  color: $c-text-06;
+}

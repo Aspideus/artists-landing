@@ -1,0 +1,140 @@
+.list-row {
+  margin-top: 0;
+  margin-bottom: -40px;
+
+  @include flex($fw: wrap, $ai: flex-start, $jc: center);
+
+  @include media-lg {
+    margin-top: 0;
+    margin-bottom: -80px;
+  }
+
+  &__item {
+    /*width: 100%;*/
+    padding: 0;
+    flex: 0 0 50%;
+    margin-bottom: 40px;
+
+    @include flex($fd: column, $fw: wrap, $ai: flex-start, $jc: flex-start);
+
+      @include media-lg {
+        margin-bottom: 80px;
+      }
+
+    &--mb {
+      margin-bottom: 40px;
+
+      @include media-lg {
+        margin-bottom: 0px;
+      }
+    }
+
+    &--center {
+      text-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+
+      @include media-lg {
+        align-items: flex-start;
+        text-align: start;
+      }
+    }
+
+    &--full {
+      flex: 0 0 100%;
+    }
+  }
+
+  &__icon {
+    margin-bottom: 15px;
+
+    img {
+      object-fit: cover;
+    }
+
+    &--sm {
+      width: 40px;
+      height: 40px;
+    }
+
+    &--center {
+      margin-left: auto;
+      margin-right: auto;
+
+      @include media-lg {
+        margin: 0;
+      }
+    }
+  }
+
+  &__title {
+    @include font($fs: 18px, $lh: 140%, $fy: normal, $fw: 600);
+    text-align: center;
+    color: $c-text;
+    padding: 0 20px;
+
+    @include media-sm {
+      max-width: 250px;
+    }
+
+    @include media-lg {
+      text-align: start;
+      margin-top: 15px;
+      padding: 0;
+    }
+
+    &--white {
+      color: $c-white;
+    }
+
+    &--one-line {
+      flex: auto;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+.list {
+  text-align: start;
+  margin-top: 40px;
+
+  @include font($fw: bold);
+
+  &-checked {
+    padding: 0 0 0 16px;
+
+    @include font($fw: initial, $fs: 14px);
+
+    @include media-sm {
+      width: 100%;
+      margin: 20px auto;
+    }
+
+    @include media-lg {
+      width: 100%;
+      margin: 40px 0;
+    }
+
+    li {
+      list-style-image: url("../../src/img/check1.svg");
+      margin: 10px 0px 8px 8px;
+      padding-left: 2px;
+
+      @include media-lg {
+        margin: 16px 8px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__title {
+      font-weight: bold;
+      margin-left: -16px;
+
+      @include font($fw: bold);
+    }
+  }
+}
